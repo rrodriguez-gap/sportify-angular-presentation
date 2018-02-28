@@ -1,0 +1,16 @@
+<div *ngIf="artistAlbumList">
+
+  <h1>Albums for {{artistAlbumList.items[0].artists[0].name}}</h1>
+
+  <ol>
+    <li *ngFor="let t of artistAlbumList.items">
+
+      <a [routerLink]="['/albums', t.id]">
+        {{ t.name }}
+      </a>
+      <img src="{{ t.images[1].url }}" width="50">
+
+    </li>
+  </ol>
+  <p><a (click)="this.back()">Back</a></p>
+</div>
