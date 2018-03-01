@@ -181,6 +181,7 @@ table {
 td,
 th {
   padding: 0; }
+.larger{font-size: 1.5em}
 
 /*! Source: https://github.com/h5bp/html5-boilerplate/blob/master/src/css/main.css */
 @media print {

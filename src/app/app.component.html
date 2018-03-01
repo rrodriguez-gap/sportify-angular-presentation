@@ -1,6 +1,23 @@
 <div class="page-header">
   <div class="container">
-    <h1>Spotify <small>Music Search</small></h1>
+    <h1>Spotify
+      <small>Music Search</small>
+    </h1>
+  </div>
+  <div class="container">
+    <div class="col-md-4">
+      <a routerLink="/search" routerLinkActive="text-warning larger">Search</a> &nbsp;
+    </div>
+    <div class="col-md-4 col-md-offset-4">
+      <span *ngIf="!authService.getUser()">
+        <a routerLink="/login">Login to see my secret</a>
+      </span>
+      <span *ngIf="authService.getUser()">
+        Logged in as <b>{{ authService.getUser() }}</b>&nbsp; | &nbsp;
+        <a routerLink="/protected">See my secret</a>&nbsp; | &nbsp;
+        <a href (click)="logout()">Log out</a>
+      </span>
+    </div>
   </div>
 </div>
 
