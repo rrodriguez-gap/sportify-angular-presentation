@@ -5,8 +5,17 @@
     <img src="{{ artist.images[0].url }}" width="150">
   </p>
 
-  <a [routerLink]="['/artists', artist.id, 'albums']">See all available albums</a> <br/>
-  <br/>
+  <h3><a [routerLink]="['/artists', artist.id, 'albums']">See all Albums</a></h3>
+  <br />
+  <h4>Top Tracks</h4>
+  <ol>
+    <li *ngFor="let t of artistTopTracks.tracks">
+      <p><a [routerLink]="['/tracks', t.id]">
+        {{ t.name }}
+      </a></p>
+      <audio controls src="{{ t.preview_url }}"></audio>
+    </li>
+  </ol>
 
   <p><a (click)="back()">Back</a></p>
 </div>

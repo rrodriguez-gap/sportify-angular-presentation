@@ -75,6 +75,10 @@ export class SpotifyService {
     return this.query(`/artists/${id}/albums`, ['limit=50', 'album_type=album', 'market=ES']);
   }
 
+  getArtistTopTracks(id: string): Observable<any[]> {
+    return this.query(`/artists/${id}/top-tracks`, ['country=CR']);
+  }
+
   getAlbum(id: string): Observable<any[]> {
     return this.query(`/albums/${id}`);
   }
