@@ -9,4 +9,9 @@ import {AuthService} from './auth.service';
 export class AppComponent {
   title = 'Sportify: Your best alternative for finding music';
   constructor(public authService: AuthService) {}
+
+  logout(): boolean {
+    this.authService.logout();
+    return false;
+  }
 }
